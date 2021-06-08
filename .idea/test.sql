@@ -15,13 +15,13 @@ create table groups_genre (
 
 create table genre_music (
     id serial primary key,
-    name varchar(40) not null,
+    name varchar(40) not null
     );
 
 create table albums (
     id serial primary key,
     name varchar(40) not null,
-    date timestamp not null,
+    date timestamp not null
     );
 
 create table collections (
@@ -34,10 +34,10 @@ create table track_list (
     id serial primary key,
     id_album integer references albums (id),
     name varchar(40) not null,
-    duration time,
+    duration time
     );
 
 create table track_collections (
-    id_collections references collections (id),
-    id_track references track_list (id)
+    id_collections integer references collections (id),
+    id_track integer references track_list (id)
     );
